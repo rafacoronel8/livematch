@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jogadas Ensaiadas — Campo de 11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="campo.css">
+</head>
+<body>
+
+  <div class="wrap">
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <div class="brand-text">
+          <h1>Jogadas Ensaiadas</h1>
+          <p>Sequências animadas num campo de 11 contra 11</p>
+        </div>
+      </div>
+      <div class="scoreboard" id="scoreboard">
+        <span class="team-tag home">EQ. A</span>
+        <span class="score" id="scoreHome">0</span>
+        <span class="dash">—</span>
+        <span class="score" id="scoreAway">0</span>
+        <span class="team-tag away">EQ. B</span>
+      </div>
+    </header>
+
+    <main class="stage">
+
+      <div class="pitch-frame">
+        <div class="pitch" id="pitch">
+
+          <!-- markings -->
+          <div class="line outer"></div>
+          <div class="line halfway"></div>
+          <div class="circle center"></div>
+          <div class="spot center-spot"></div>
+
+          <div class="box big-box left"></div>
+          <div class="box small-box left"></div>
+          <div class="spot pen-spot left"></div>
+          <div class="arc pen-arc left"></div>
+          <div class="corner-arc cl-top"></div>
+          <div class="corner-arc cl-bottom"></div>
+
+          <div class="box big-box right"></div>
+          <div class="box small-box right"></div>
+          <div class="spot pen-spot right"></div>
+          <div class="arc pen-arc right"></div>
+          <div class="corner-arc cr-top"></div>
+          <div class="corner-arc cr-bottom"></div>
+
+          <div class="goal left">
+            <div class="net"></div>
+          </div>
+          <div class="goal right">
+            <div class="net" id="rightNet"></div>
+          </div>
+
+          <!-- dynamic layer for players + ball, filled by js -->
+          <div id="actors"></div>
+
+          <div class="goal-flash" id="goalFlash">GOLO!</div>
+
+        </div>
+      </div>
+
+      <div class="controls">
+        <p class="controls-label">Escolhe a jogada</p>
+        <div class="play-list" id="playList">
+          <button class="play-btn active" data-play="corner">
+            <span class="play-num">1</span>
+            <span class="play-name">Golo de canto</span>
+          </button>
+          <button class="play-btn" data-play="contra">
+            <span class="play-num">2</span>
+            <span class="play-name">Contra-ataque</span>
+          </button>
+          <button class="play-btn" data-play="ensaiada">
+            <span class="play-num">3</span>
+            <span class="play-name">Livre ensaiado</span>
+          </button>
+          <button class="play-btn" data-play="triangulacao">
+            <span class="play-num">4</span>
+            <span class="play-name">Triangulação</span>
+          </button>
+          <button class="play-btn" data-play="cruzamento">
+            <span class="play-num">5</span>
+            <span class="play-name">Cruzamento</span>
+          </button>
+        </div>
+        <div class="actions">
+          <button class="run-btn" id="runBtn">Reproduzir jogada</button>
+          <button class="reset-btn" id="resetBtn">Repor posições</button>
+        </div>
+        <p class="status" id="status">Pronto para o canto. Carrega em «Reproduzir jogada».</p>
+      </div>
+
+    </main>
+
+  </div>
+
+<script src="campo.js"></script>
+</body>
+</html>
